@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attribute and Class Binding</title>
+	<style type="text/css">
+		.color-red{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="root">
+		<h2>All Tasks</h2>
+		<ul>
+			<li v-for="task in tasks" v-if="task.completed == true" >{{ task.description }}</li>
+		</ul>
+
+		<h2>Incompleted Task</h2>
+		<ul>
+			<li v-for="task in inConpleteTask" v-text="task.description"></li>
+		</ul>
+	</div>
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+	<script type="text/javascript">
+
+		var app = new Vue({
+			el: '#root',
+			data:{
+				tasks: [
+					{ description: "Go to the Store", completed: true},
+					{ description: "Hello World", completed: false},
+					{ description: "Revange for nature", completed: false},
+					{ description: "GNothing to do", completed: true},
+					{ description: "Go to the Store32", completed: false},
+					{ description: "Go to the Store43543", completed: true},
+					{ description: "Go to the Store44", completed: false},
+					{ description: "Go to the Store4", completed: false},
+					{ description: "Go to the Store4543534", completed: false},
+				]
+	
+			},
+
+			methods: {
+
+			},
+
+			computed: {
+				inConpleteTask(){
+					return this.tasks.filter(task =>! task.completed)
+				}
+			},
+
+			mounted(){
+
+			}
+			
+
+		})
+
+		
+	</script>
+</body>
+</html>

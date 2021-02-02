@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attribute and Class Binding</title>
+	<style type="text/css">
+		.color-red{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="root">
+		<!-- <button :title="title">Hover Over Me</button> -->
+
+		<h1 :class="className">Hello World</h1>
+	</div>
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+	<script type="text/javascript">
+
+		var app = new Vue({
+			el: '#root',
+			data:{
+				title: "I am from using javascript",
+				className: 'color-red'
+			},
+
+			methods: {
+
+			},
+
+			mounted(){
+
+			}
+			
+
+		})
+
+		
+	</script>
+</body>
+</html>
