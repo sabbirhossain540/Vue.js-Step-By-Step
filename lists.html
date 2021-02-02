@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lists</title>
+</head>
+<body>
+	<div id="root">
+		<ul>
+			<li v-for="name in names">{{ name }}</li>
+		</ul>
+
+		<input type="text" id="name">
+		<button id="btn">Add Name</button>
+	</div>
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+	<script type="text/javascript">
+
+		var app = new Vue({
+			el: '#root',
+			data:{
+				names: ['sabbir', 'rony', 'rayhan', 'hazrot']
+			},
+
+			mounted(){
+				document.querySelector('#btn').addEventListener('click', () => {
+					let name = document.querySelector('#name').value;
+					app.names.push(name);
+					name.value ='';
+				});
+			}
+			
+
+		})
+
+		
+	</script>
+</body>
+</html>
