@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Binding</title>
+</head>
+<body>
+	<div id="root">
+		<input type="text" id="input" v-model="data.message">
+		<p>the value of input is: {{ data.message }}</p>
+	</div>
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+	<script type="text/javascript">
+		//in vue.js
+		let data = {
+			message: 'Hello World'
+		}
+
+		new Vue({
+			el: '#root',
+			data: data
+
+		})
+
+		//Normal Process
+		// let data = {
+		// 	message: 'Hello World'
+		// }
+		
+		// document.querySelector('#input').value = data.message;
+	</script>
+</body>
+</html>

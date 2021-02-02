@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event Listener</title>
+</head>
+<body>
+	<div id="root">
+		<ul>
+			<li v-for="name in names">{{ name }}</li>
+		</ul>
+
+		<input type="text" v-model="newName">
+		<button @click="addName">Add Name</button>
+	</div>
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+	<script type="text/javascript">
+
+		var app = new Vue({
+			el: '#root',
+			data:{
+				newName: '',
+				names: ['sabbir', 'rony', 'rayhan', 'hazrot']
+			},
+
+			methods: {
+				addName(){
+					this.names.push(this.newName);
+					this.newName = '';
+				}
+			},
+
+			mounted(){
+
+			}
+			
+
+		})
+
+		
+	</script>
+</body>
+</html>
